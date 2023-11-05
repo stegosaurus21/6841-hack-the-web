@@ -4,11 +4,11 @@
     "description": "",
     "scripts": {
         "start": "vite",
-        "build": "vite build",
+        "build": "vite build --base=/6841-hack-the-web/",
         "preview": "vite preview",
         "typecheck": "tsc --noEmit",
         "typewatch": "tsc --noEmit --watch",
-        "predeploy": "rm -rf dist && vite build",
+        "predeploy": "rm -rf dist && vite build --base=/6841-hack-the-web/",
         "deploy": "gh-pages -d dist"
     },
     "license": "MIT",
