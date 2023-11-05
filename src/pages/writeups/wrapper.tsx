@@ -18,6 +18,16 @@ const WriteupsWrapper = (props: { writeup: any }) => {
                 sx={{ cursor: "pointer" }}
             >{`< Back`}</Link>
             <Typography variant="h4">{props.writeup.title}</Typography>
+            <Typography variant="subtitle1">
+                Challenge by:{" "}
+                <Link
+                    variant="subtitle1"
+                    href={props.writeup.chalAuthLink}
+                    target="_blank"
+                >
+                    {props.writeup.chalAuth}
+                </Link>
+            </Typography>
             <Container
                 disableGutters
                 sx={{

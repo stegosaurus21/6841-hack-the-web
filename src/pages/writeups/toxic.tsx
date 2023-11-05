@@ -10,6 +10,8 @@ import RedHerring from "~util/RedHerring";
 export const WriteupsToxic = {
     path: "toxic",
     title: "Toxic",
+    chalAuth: "Froj",
+    chalAuthLink: "https://app.hackthebox.com/users/156190",
     tags: [
         "Medium",
         "@PHP",

@@ -13,6 +13,8 @@ import Learning from "~util/Learning";
 export const WriteupsWeather = {
     path: "weather",
     title: "Weather App",
+    chalAuth: "makelaris",
+    chalAuthLink: "https://app.hackthebox.com/users/107",
     tags: [
         "Hard",
         "@Express",

@@ -12,6 +12,8 @@ import Learning from "~util/Learning";
 export const WriteupsNeon = {
     path: "neon",
     title: "Neonify",
+    chalAuth: "Codehead",
+    chalAuthLink: "https://app.hackthebox.com/users/129959",
     tags: ["Easy", "@Ruby", "SSTI"],
     description:
         "Learning to use Burp Suite and using regex evasion pull off a neat SSTI.",

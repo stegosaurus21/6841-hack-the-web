@@ -12,6 +12,8 @@ import Learning from "~util/Learning";
 export const WriteupsLove = {
     path: "love",
     title: "LoveTok",
+    chalAuth: "makelaris",
+    chalAuthLink: "https://app.hackthebox.com/users/107",
     tags: ["Medium", "@PHP", "Unsafe Eval"],
     description: "A deceptively simple and extremely painful PHP eval exploit.",
     reflection: () => {

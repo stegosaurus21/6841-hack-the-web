@@ -13,6 +13,8 @@ import Learning from "~util/Learning";
 export const WriteupsEaster = {
     path: "easter",
     title: "Easter Bunny",
+    chalAuth: "JoshSH",
+    chalAuthLink: "https://app.hackthebox.com/users/269501",
     tags: [
         "Hard",
         "@Express",

@@ -10,6 +10,8 @@ import RedHerring from "~util/RedHerring";
 export const WriteupsRender = {
     path: "render",
     title: "RenderQuest",
+    chalAuth: "leanthedev",
+    chalAuthLink: "https://app.hackthebox.com/users/1338083",
     tags: ["Medium", "@Go", "SSTI"],
     description:
         "My first, Go-flavored experience with the insane power of SSTI.",

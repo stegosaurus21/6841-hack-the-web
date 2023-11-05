@@ -8,6 +8,8 @@ import Quote from "~util/Quote";
 export const WriteupsApache = {
     path: "apache",
     title: "ApacheBlaze",
+    chalAuth: "dhmosfunk",
+    chalAuthLink: "https://app.hackthebox.com/users/78776",
     tags: ["Easy", "@Apache Server", "Request Smuggling"],
     description:
         "Exploiting a severity 9.8 HTTP request smuggling vulnerability in Apache Server.",

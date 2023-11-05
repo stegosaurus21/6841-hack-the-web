@@ -12,6 +12,8 @@ import { useNavigate } from "react-router-dom";
 export const WriteupsCOP = {
     path: "cop",
     title: "C.O.P",
+    chalAuth: "InfoSecJack",
+    chalAuthLink: "https://app.hackthebox.com/users/52045",
     tags: [
         "Easy",
         "@Flask",
