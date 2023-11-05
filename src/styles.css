@@ -1,0 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code&display=swap");
+
+div .cb {
+    font-family: "Fira Code", monospace;
+}
+
+div .cbi {
+    font-family: "Fira Code", monospace;
+    display: inline;
+}

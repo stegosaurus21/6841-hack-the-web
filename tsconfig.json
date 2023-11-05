@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+        "baseUrl": "./src",
+        "jsx": "react",
+        "moduleResolution": "Node",
+        "paths": {
+            "~*": ["./*"]
+        },
+        "plugins": [{ "name": "typescript-plugin-css-modules" }],
+        "strict": true,
+        "target": "ES2015",
+        "types": ["vite/client"]
+    },
+    "include": ["src/**/*"]
+}
