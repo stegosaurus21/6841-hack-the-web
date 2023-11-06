@@ -229,7 +229,7 @@ const WebApproach = () => {
                     </Typography>
                 </Resource>
                 <Resource
-                    title="AllThePayloads"
+                    title="PayloadsAllTheThings"
                     url="https://github.com/swisskyrepo/PayloadsAllTheThings"
                 >
                     <Typography>

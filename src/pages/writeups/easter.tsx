@@ -41,11 +41,10 @@ export const WriteupsEaster = {
                     malicious things, all without the application or end user
                     noticing.
                 </Learning>
-                <Learning title="CSRF is the new XSS">
-                    This was my first time exploiting a client-side request
-                    forgery - well sort of, it was really an XSS that I used for
-                    CSRF purposes. But still, it was interesting to do another
-                    client-side exploit that wasn't just an XSS.
+                <Learning title="XSS for client-side request forgery">
+                    This was my first time using XSS for client-side request
+                    forgery. It was interesting to do a different client-side
+                    exploit that wasn't just stealing credentials.
                 </Learning>
                 <Learning title="Do your dang recon">
                     So much of my time in this challenge was wasted because I

@@ -18,7 +18,7 @@ import Reflections from "~pages/Reflections";
 
 export default () => (
     <>
-        <Router>
+        <Router basename={import.meta.env.BASE_URL}>
             <Navbar />
             <Container
                 className="justify-content-center text-center"
