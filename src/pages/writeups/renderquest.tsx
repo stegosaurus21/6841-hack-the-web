@@ -6,6 +6,11 @@ import MultiLine from "~util/MultiLineCode";
 import Quote from "~util/Quote";
 import RabbitHole from "~util/RabbitHole";
 import RedHerring from "~util/RedHerring";
+import SourcedImage from "~util/SourcedImage";
+import render1 from "~img/render1.png";
+import render2 from "~img/render2.png";
+import render3 from "~img/render3.png";
+import render4 from "~img/render4.png";
 
 export const WriteupsRender = {
     path: "render",
@@ -69,6 +74,18 @@ export const WriteupsRender = {
                 </Typography>
 
                 <Typography>
+                    Essentially, the app allows us to render arbitrary URLs as
+                    templates with some given client and server data.
+                </Typography>
+
+                <SourcedImage src={render3} height="40vh" />
+                <SourcedImage
+                    src={render4}
+                    caption="Rendering google.com"
+                    height="15vh"
+                />
+
+                <Typography>
                     Hmm, templates. I suspect we'll be looking for some sort of
                     RCE. The container is up, so I'll take a look at that first
                     to see what attack vectors there are. Oh. I can make it
@@ -128,6 +145,11 @@ export const WriteupsRender = {
                         <Inline>../static/js/script.js</Inline> works. What
                         about <Inline>../main.go</Inline>? Yep, working too.
                     </Typography>
+                    <SourcedImage
+                        src={render1}
+                        caption="Rendering a local page with path traversal"
+                        height="60vh"
+                    />
                     <Typography>
                         Enough guessing though - if we want to evade this
                         filter, we'll need to take a look back at the code. It
@@ -244,9 +266,15 @@ if err != nil {
                     >
                         HackTricks
                     </Link>
-                    , we get the following:
+                    , we get the following payload, which we put into a Pastebin
+                    to be rendered.
                 </Typography>
                 <Inline>{`{{printf "%s" "ssti" }}`}</Inline>
+                <SourcedImage
+                    src={render2}
+                    caption="Why host a page when you can use Pastebin?"
+                    height="30vh"
+                />
                 <Typography>
                     This works nicely, generating the output{" "}
                     <Inline>ssti</Inline>, indicating that we can go ahead to

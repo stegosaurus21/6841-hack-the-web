@@ -4,9 +4,8 @@ import Inline from "~util/InlineCode";
 import MultiLine from "~util/MultiLineCode";
 import Quote from "~util/Quote";
 import SourcedImage from "~util/SourcedImage";
-import RabbitHole from "~util/RabbitHole";
-import RedHerring from "~util/RedHerring";
-import easter1 from "~img/easter1.png";
+import neon1 from "~img/neon1.png";
+import neon2 from "~img/neon2.png";
 import Learning from "~util/Learning";
 
 export const WriteupsNeon = {
@@ -119,6 +118,16 @@ export const WriteupsNeon = {
                     POST request we saw earlier, and we can now send that to the
                     Repeater to start cooking up some payloads.
                 </Typography>
+                <SourcedImage
+                    src={neon2}
+                    caption="Intercepting the POST request with Burp Suite."
+                    height="40vh"
+                />
+                <SourcedImage
+                    src={neon1}
+                    caption="Using the Repeater to craft my own queries."
+                    height="40vh"
+                />
                 <Typography>
                     Let's start with the basic expression evaluation{" "}
                     <Inline>{`<%= 7*7 %>`}</Inline>. We HTML encode this to make

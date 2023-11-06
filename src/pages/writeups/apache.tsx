@@ -4,6 +4,9 @@ import Inline from "~util/InlineCode";
 import Learning from "~util/Learning";
 import MultiLine from "~util/MultiLineCode";
 import Quote from "~util/Quote";
+import apache1 from "~img/apache1.png";
+import apache2 from "~img/apache2.png";
+import SourcedImage from "~util/SourcedImage";
 
 export const WriteupsApache = {
     path: "apache",
@@ -91,6 +94,11 @@ if request.headers.get('X-Forwarded-Host') == 'dev.apacheblaze.local':
                     possible exploit by passing the required X-Forwarded-Host
                     header.
                 </Typography>
+                <SourcedImage
+                    src={apache2}
+                    caption="The rendered site, showing the normal error when trying to access the flag."
+                    height="40vh"
+                />
                 <Typography>
                     Nope - the response just gives me the regular game page.
                     This makes sense, since we're basically just getting the
@@ -99,6 +107,7 @@ if request.headers.get('X-Forwarded-Host') == 'dev.apacheblaze.local':
                     to as well (since the frontend is clientside). Time to dig
                     through the source again.
                 </Typography>
+
                 <Typography>
                     Looks like it's calling the <Inline>/api/games</Inline>{" "}
                     route, so let's try that. I thought it was weird how the
@@ -213,11 +222,19 @@ uwsgi==2.0.22`}
                     smuggle a HTTP request (my first ever)! Another interesting
                     thing I notice is that the X-Forwarded-Host is now{" "}
                     <Inline>localhost</Inline> which is exactly what was entered
-                    as the host in the proof of concept. Surely changing this to
-                    the <Inline>dev.apacheblaze.local</Inline> couldn't just be
-                    it. But amazingly it was, and I managed to get the test
-                    flag. Applying the same thing to the remote instance caused
-                    no dramas, and I managed to solve the challenge!
+                    as the host in the proof of concept.
+                </Typography>
+                <SourcedImage
+                    src={apache1}
+                    sourceName="Own screenshot"
+                    height="5vh"
+                />
+                <Typography>
+                    Surely changing this to the{" "}
+                    <Inline>dev.apacheblaze.local</Inline> couldn't just be it.
+                    But amazingly it was, and I managed to get the test flag.
+                    Applying the same thing to the remote instance caused no
+                    dramas, and I managed to solve the challenge!
                 </Typography>
             </>
         );

@@ -4,6 +4,7 @@ import Inline from "~util/InlineCode";
 import MultiLine from "~util/MultiLineCode";
 import Quote from "~util/Quote";
 import cop1 from "../../img/cop1.png";
+import cop2 from "../../img/cop2.png";
 import SourcedImage from "~util/SourcedImage";
 import Learning from "~util/Learning";
 import LinkInternal from "~util/LinkInternal";
@@ -74,6 +75,7 @@ export const WriteupsCOP = {
                     product ID into the API{" "}
                     <Inline>{`/view/<product_id>`}</Inline> route.
                 </Typography>
+                <SourcedImage src={cop2} height="40vh" />
                 <MultiLine language="py">{`@web.route('/view/<product_id>')
 def product_details(product_id):
     return render_template('item.html', product=shop.select_by_id(product_id))`}</MultiLine>

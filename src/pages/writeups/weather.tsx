@@ -5,6 +5,8 @@ import MultiLine from "~util/MultiLineCode";
 import Quote from "~util/Quote";
 import weather1 from "~img/weather1.png";
 import weather2 from "~img/weather2.png";
+import weather3 from "~img/weather3.png";
+import weather4 from "~img/weather4.png";
 import SourcedImage from "~util/SourcedImage";
 import RabbitHole from "~util/RabbitHole";
 import RedHerring from "~util/RedHerring";
@@ -80,10 +82,22 @@ export const WriteupsWeather = {
                     The application itself looks fairly devoid of attack
                     vectors, so I decide to check out the source code isntead.
                     This reveals the <Inline>/login</Inline> and{" "}
-                    <Inline>/register</Inline> routes. The{" "}
-                    <Inline>/login</Inline> route just gives us a free flag if
-                    we manage to log in as an admin - presumably as a stand in
-                    for an actual admin console.
+                    <Inline>/register</Inline> routes.
+                </Typography>
+                <SourcedImage
+                    src={weather4}
+                    caption="The default front page"
+                    height="50vh"
+                />
+                <SourcedImage
+                    src={weather3}
+                    caption="Secret register page"
+                    height="30vh"
+                />
+                <Typography>
+                    The <Inline>/login</Inline> route just gives us a free flag
+                    if we manage to log in as an admin - presumably as a stand
+                    in for an actual admin console.
                 </Typography>
                 <MultiLine language="js">
                     {`return db

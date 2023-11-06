@@ -6,6 +6,9 @@ import MultiLine from "~util/MultiLineCode";
 import Quote from "~util/Quote";
 import RabbitHole from "~util/RabbitHole";
 import RedHerring from "~util/RedHerring";
+import SourcedImage from "~util/SourcedImage";
+import toxic1 from "~img/toxic1.png";
+import toxic2 from "~img/toxic2.png";
 
 export const WriteupsToxic = {
     path: "toxic",
@@ -87,6 +90,11 @@ export const WriteupsToxic = {
                     query parameters or API calls. It's time to go back to the
                     source.
                 </Typography>
+                <SourcedImage
+                    src={toxic2}
+                    caption="No obvious entry points?"
+                    height="60vh"
+                />
                 <Typography>
                     Searching for interesting security problems in the code, the
                     first thing that jumps out is the{" "}
@@ -245,7 +253,8 @@ mv /flag /flag_\`cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 5 | head -n 1\`
                     Worth a shot. First, we check if the server log can actually
                     be included by setting the LFI path to{" "}
                     <Inline>/var/log/nginx/access.log</Inline>. This works fine,
-                    so we try and inject a simple RCE payload.
+                    so we try and inject a simple RCE payload into the log. We
+                    then set our cookie to cause the log to be rendered.
                 </Typography>
                 <MultiLine noNumber>
                     {`GET / HTTP/1.1
@@ -253,6 +262,7 @@ Host: localhost:1337
 User-Agent: <?php print \`ls\` ?>
 ...`}
                 </MultiLine>
+                <SourcedImage src={toxic1} height="60vh" />
                 <Typography>
                     Dang, that just works. At this stage, we just{" "}
                     <Inline>cat</Inline> our flag and we're done!

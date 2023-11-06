@@ -3,7 +3,8 @@ import * as React from "react";
 
 const SourcedImage = (props: {
     sourceLink?: string;
-    sourceName: string;
+    sourceName?: string;
+    caption?: string;
     height: string;
     src: string;
 }) => {
@@ -11,6 +12,11 @@ const SourcedImage = (props: {
         <Container sx={{ p: 1, display: "flex", justifyContent: "center" }}>
             <Box>
                 <img src={props.src} style={{ height: props.height }} />
+                {props.caption && (
+                    <Typography sx={{ fontSize: 10 }}>
+                        {props.caption}
+                    </Typography>
+                )}
                 <Box>
                     <span style={{ fontSize: 10, fontWeight: 700 }}>
                         Source:{" "}
@@ -26,7 +32,7 @@ const SourcedImage = (props: {
                         </Link>
                     ) : (
                         <span style={{ fontSize: 10, fontWeight: 700 }}>
-                            {props.sourceName}
+                            {props.sourceName || "Own screenshot"}
                         </span>
                     )}
                 </Box>

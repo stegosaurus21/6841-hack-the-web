@@ -1,13 +1,11 @@
 import { Link, Typography } from "@mui/material";
 import * as React from "react";
 import Inline from "~util/InlineCode";
-import MultiLine from "~util/MultiLineCode";
 import Quote from "~util/Quote";
-import SourcedImage from "~util/SourcedImage";
-import RabbitHole from "~util/RabbitHole";
-import RedHerring from "~util/RedHerring";
-import easter1 from "~img/easter1.png";
+import love1 from "~img/love1.png";
+import love2 from "~img/love2.png";
 import Learning from "~util/Learning";
+import SourcedImage from "~util/SourcedImage";
 
 export const WriteupsLove = {
     path: "love",
@@ -60,6 +58,16 @@ export const WriteupsLove = {
                     that will quickly become apparent) - but at least version
                     7.4 seems relatively recent, with no obvious CVEs.
                 </Typography>
+                <SourcedImage
+                    src={love2}
+                    caption="How the application usually looks."
+                    height="30vh"
+                />
+                <SourcedImage
+                    src={love1}
+                    caption="We can inject input into the date format."
+                    height="40vh"
+                />
                 <Typography>
                     Next - what are our input methods? There isn't anything
                     obvious, but checking out the source code reveals that we

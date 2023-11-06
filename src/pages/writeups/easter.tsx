@@ -3,11 +3,13 @@ import * as React from "react";
 import Inline from "~util/InlineCode";
 import MultiLine from "~util/MultiLineCode";
 import Quote from "~util/Quote";
-import cop1 from "../../img/cop1.png";
 import SourcedImage from "~util/SourcedImage";
 import RabbitHole from "~util/RabbitHole";
 import RedHerring from "~util/RedHerring";
 import easter1 from "~img/easter1.png";
+import easter2 from "~img/easter2.png";
+import easter3 from "~img/easter3.png";
+import easter4 from "~img/easter4.png";
 import Learning from "~util/Learning";
 
 export const WriteupsEaster = {
@@ -117,6 +119,21 @@ export const WriteupsEaster = {
                     message, which contained the flag, that was only accessible
                     by 'admin users'.
                 </Typography>
+                <SourcedImage
+                    src={easter4}
+                    caption="Sending a message..."
+                    height="30vh"
+                />
+                <SourcedImage
+                    src={easter3}
+                    caption="It's sent back to us..."
+                    height="30vh"
+                />
+                <SourcedImage
+                    src={easter2}
+                    caption="But one's hidden!"
+                    height="10vh"
+                />
                 <Typography>
                     Time to dig into the source code - one interesting thing
                     that I quickly noticed was the <Inline>bot.js</Inline> file.

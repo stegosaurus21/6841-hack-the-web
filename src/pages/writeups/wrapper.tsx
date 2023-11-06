@@ -1,6 +1,17 @@
-import { Box, Chip, Container, Link, Typography } from "@mui/material";
+import {
+    Box,
+    Card,
+    CardActionArea,
+    Chip,
+    Container,
+    Link,
+    Typography,
+} from "@mui/material";
 import * as React from "react";
 import { useNavigate } from "react-router-dom";
+import { writeups } from ".";
+import { ArrowBack, ArrowForward } from "@mui/icons-material";
+import LinkInternal from "~util/LinkInternal";
 
 const difficultyColors: Record<string, "success" | "warning" | "error"> = {
     easy: "success",
@@ -10,10 +21,14 @@ const difficultyColors: Record<string, "success" | "warning" | "error"> = {
 
 const WriteupsWrapper = (props: { writeup: any }) => {
     const navigate = useNavigate();
+    const index = writeups.indexOf(props.writeup);
     return (
         <Container sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
             <Link
-                onClick={() => navigate(-1)}
+                onClick={() => {
+                    window.scrollTo(0, 0);
+                    navigate(-1);
+                }}
                 underline="none"
                 sx={{ cursor: "pointer" }}
             >{`< Back`}</Link>
@@ -60,7 +75,80 @@ const WriteupsWrapper = (props: { writeup: any }) => {
                 underline="none"
                 sx={{ cursor: "pointer" }}
             >{`^ Back to top`}</Link>
-            <Box sx={{ mb: 4 }} />
+            <Box
+                sx={{ mb: 4, display: "flex", justifyContent: "space-between" }}
+            >
+                {index > 0 ? (
+                    <CardActionArea
+                        sx={{ width: "30%" }}
+                        onClick={() =>
+                            setTimeout(() => {
+                                window.scrollTo(0, 0);
+                                navigate(
+                                    `/writeups/${writeups[index - 1].path}`
+                                );
+                            }, 250)
+                        }
+                    >
+                        <Card sx={{ p: 2 }}>
+                            <Box
+                                sx={{
+                                    display: "flex",
+                                    alignItems: "center",
+                                    gap: 2,
+                                }}
+                            >
+                                <ArrowBack />
+                                <Box>
+                                    <Typography>Previous writeup:</Typography>
+                                    <Typography variant="h6">
+                                        {writeups[index - 1].title}
+                                    </Typography>
+                                </Box>
+                            </Box>
+                        </Card>
+                    </CardActionArea>
+                ) : (
+                    <Box />
+                )}
+                {index < writeups.length - 1 && (
+                    <CardActionArea
+                        sx={{ width: "30%" }}
+                        onClick={() =>
+                            setTimeout(() => {
+                                window.scrollTo(0, 0);
+                                navigate(
+                                    `/writeups/${writeups[index + 1].path}`
+                                );
+                            }, 250)
+                        }
+                    >
+                        <Card sx={{ p: 2 }}>
+                            <Box
+                                sx={{
+                                    display: "flex",
+                                    alignItems: "center",
+                                    justifyContent: "flex-end",
+                                    gap: 2,
+                                }}
+                            >
+                                <Box>
+                                    <Typography sx={{ textAlign: "right" }}>
+                                        Next writeup:
+                                    </Typography>
+                                    <Typography
+                                        sx={{ textAlign: "right" }}
+                                        variant="h6"
+                                    >
+                                        {writeups[index + 1].title}
+                                    </Typography>
+                                </Box>
+                                <ArrowForward />
+                            </Box>
+                        </Card>
+                    </CardActionArea>
+                )}
+            </Box>
         </Container>
     );
 };
